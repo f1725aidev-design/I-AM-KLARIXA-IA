@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLARIXA IA Chat Interface</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .chat-container { max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; }
+        .message { margin: 10px 0; }
+        .user { font-weight: bold; color: blue; }
+        .bot { font-weight: bold; color: green; }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <h1>KLARIXA IA Chat Interface</h1>
+        <div id="chat-box">
+            <div class="message user">User: Hello, KLARIXA!</div>
+            <div class="message bot">KLARIXA: How can I assist you today?</div>
+        </div>
+        <input type="text" id="user-input" placeholder="Type your message..." />
+        <button id="send-button">Send</button>
+    </div>
+    <script>
+        // Add functionality for sending messages
+        document.getElementById('send-button').onclick = function() {
+            const userInput = document.getElementById('user-input').value;
+            const chatBox = document.getElementById('chat-box');
+            chatBox.innerHTML += `<div class="message user">User: ${userInput}</div>`;
+            document.getElementById('user-input').value = '';
+            // Simulated bot response
+            setTimeout(() => {
+                chatBox.innerHTML += `<div class="message bot">KLARIXA: Sorry, I am just a demo!</div>`;
+            }, 1000);
+        };
+    </script>
+</body>
+</html>
